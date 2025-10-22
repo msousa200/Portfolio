@@ -48,7 +48,7 @@ const projects = [
   {
     title: "LinkCurto - Encurtador de URLs",
     description:
-      "Encurtador de URLs moderno e seguro desenvolvido com React, Node.js e Tailwind CSS, hospedado no Vercel. Este projeto full-stack demonstra a implementação de um sistema completo de encurtamento de URLs com foco em segurança, performance e experiência do usuário. A aplicação permite transformar URLs longas em links curtos e memoráveis, gerando automaticamente QR codes para fácil compartilhamento.",
+      "Encurtador de URLs moderno e seguro desenvolvido com React, Node.js e Tailwind CSS. Este projeto full-stack demonstra a implementação de um sistema completo de encurtamento de URLs com foco em segurança, performance e experiência do usuário. A aplicação permite transformar URLs longas em links curtos e memoráveis, gerando automaticamente QR codes para fácil compartilhamento.",
     image:
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20ecr%C3%A3%202025-10-22%20151026-6qWKyzqPRu7SWtWWeyxDVh55ZfV4A6.png",
     link: "https://encurtador-links-eosin.vercel.app/",
