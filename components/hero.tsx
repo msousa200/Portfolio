@@ -9,22 +9,14 @@ export function Hero() {
   const heroRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in")
-          }
-        })
-      },
-      { threshold: 0.1 },
-    )
-
+    // Trigger animations on mount since Hero is always visible on load
     if (heroRef.current) {
-      observer.observe(heroRef.current)
+      const animatedElements = heroRef.current.querySelectorAll(".opacity-0")
+      animatedElements.forEach((el) => {
+        el.classList.remove("opacity-0")
+        el.classList.add("animate-fade-in-up")
+      })
     }
-
-    return () => observer.disconnect()
   }, [])
 
   const scrollToProjects = () => {

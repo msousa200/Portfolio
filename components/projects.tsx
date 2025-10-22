@@ -76,6 +76,7 @@ export function Projects() {
             entry.target.querySelectorAll(".animate-on-scroll").forEach((el, index) => {
               setTimeout(() => {
                 el.classList.add("animate-fade-in-up")
+                el.classList.remove("opacity-0")
               }, index * 200)
             })
           }
