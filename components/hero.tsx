@@ -32,8 +32,12 @@ export function Hero() {
       ref={heroRef}
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-background pointer-events-none" />
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/10 to-background animate-gradient-shift" />
+      
+      {/* Geometric shapes */}
+      <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
@@ -41,9 +45,11 @@ export function Hero() {
           <div className="space-y-8">
             {/* Name and Title */}
             <div className="space-y-4 opacity-0 animate-fade-in-up [animation-delay:200ms]">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-balance">Miguel Sousa</h1>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-balance bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text">
+                Miguel Sousa
+              </h1>
               <p className="text-2xl md:text-3xl text-muted-foreground font-medium">
-                Programador Full-Stack & Entusiasta de IA
+                Programador <span className="text-primary">Full-Stack</span> & Entusiasta de <span className="text-accent">IA</span>
               </p>
             </div>
 
@@ -52,7 +58,7 @@ export function Hero() {
               {["Next.js", "Python", "Integração IA", "Django", "TypeScript", "React"].map((tech, index) => (
                 <span
                   key={tech}
-                  className="px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 cursor-default"
+                  className="px-4 py-2 bg-secondary/50 backdrop-blur-sm text-secondary-foreground rounded-full text-sm font-medium hover:bg-secondary transition-all duration-300 hover:scale-105 border border-border/50"
                   style={{ animationDelay: `${400 + index * 50}ms` }}
                 >
                   {tech}
@@ -67,7 +73,11 @@ export function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up [animation-delay:800ms]">
-              <Button size="lg" onClick={scrollToProjects} className="text-base">
+              <Button 
+                size="lg" 
+                onClick={scrollToProjects} 
+                className="text-base bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+              >
                 Ver Projetos
                 <ArrowDown className="ml-2 h-4 w-4" />
               </Button>
@@ -78,7 +88,7 @@ export function Hero() {
                   const element = document.getElementById("contact")
                   if (element) element.scrollIntoView({ behavior: "smooth" })
                 }}
-                className="text-base"
+                className="text-base border-2 hover:bg-primary/10 transition-all duration-300 hover:scale-105"
               >
                 Entrar em Contacto
               </Button>
