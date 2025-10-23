@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import { ProjectCard } from "@/components/project-card"
+import { ParallaxText } from "@/components/parallax-text"
 
 const projects = [
   {
@@ -94,7 +95,11 @@ export function Projects() {
         <div className="max-w-6xl mx-auto space-y-12">
           {/* Section Title */}
           <div className="text-center space-y-4 animate-on-scroll opacity-0">
-            <h2 className="text-4xl md:text-5xl font-bold">Projetos</h2>
+            <ParallaxText speed={-0.3}>
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent pb-2 overflow-visible">
+                Projetos
+              </h2>
+            </ParallaxText>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
               Uma seleção dos meus trabalhos mais recentes, demonstrando competências em programação full-stack e
               integração de IA

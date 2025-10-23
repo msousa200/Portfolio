@@ -1,7 +1,9 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { Button } from "@/components/ui/button"
+import { MagneticButton } from "@/components/magnetic-button"
+import { TypingEffect } from "@/components/typing-effect"
+import { AnimatedParticles } from "@/components/animated-particles"
 import { ArrowDown } from "lucide-react"
 import Image from "next/image"
 
@@ -32,12 +34,15 @@ export function Hero() {
       ref={heroRef}
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
     >
+      {/* Animated Particles */}
+      <AnimatedParticles />
+      
       {/* Animated gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/10 to-background animate-gradient-shift" />
       
-      {/* Geometric shapes */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+      {/* Geometric shapes with floating animation */}
+      <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse" style={{ animation: "pulse 4s ease-in-out infinite, float 6s ease-in-out infinite" }} />
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animation: "pulse 4s ease-in-out infinite, float 8s ease-in-out infinite reverse", animationDelay: "1s" }} />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
@@ -45,11 +50,23 @@ export function Hero() {
           <div className="space-y-8">
             {/* Name and Title */}
             <div className="space-y-4 opacity-0 animate-fade-in-up [animation-delay:200ms]">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-balance bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text">
-                Miguel Sousa
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-balance">
+                <span className="bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
+                  Miguel Sousa
+                </span>
               </h1>
-              <p className="text-2xl md:text-3xl text-muted-foreground font-medium">
-                Programador <span className="text-primary">Full-Stack</span> & Entusiasta de <span className="text-accent">IA</span>
+              <p className="text-2xl md:text-3xl font-medium min-h-[3rem]">
+                <TypingEffect 
+                  texts={[
+                    "Programador Full-Stack",
+                    "Entusiasta de IA",
+                    "Criador de Experiências Digitais",
+                    "Desenvolvedor Next.js"
+                  ]}
+                  typingSpeed={80}
+                  deletingSpeed={50}
+                  pauseDuration={2000}
+                />
               </p>
             </div>
 
@@ -58,7 +75,7 @@ export function Hero() {
               {["Next.js", "Python", "Integração IA", "Django", "TypeScript", "React"].map((tech, index) => (
                 <span
                   key={tech}
-                  className="px-4 py-2 bg-secondary/50 backdrop-blur-sm text-secondary-foreground rounded-full text-sm font-medium hover:bg-secondary transition-all duration-300 hover:scale-105 border border-border/50"
+                  className="px-4 py-2 bg-secondary/50 backdrop-blur-sm text-secondary-foreground rounded-full text-sm font-medium hover:bg-secondary transition-all duration-300 hover:scale-105 border border-border/50 cursor-default"
                   style={{ animationDelay: `${400 + index * 50}ms` }}
                 >
                   {tech}
@@ -73,25 +90,27 @@ export function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up [animation-delay:800ms]">
-              <Button 
+              <MagneticButton 
                 size="lg" 
                 onClick={scrollToProjects} 
-                className="text-base bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                className="text-base bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                Ver Projetos
-                <ArrowDown className="ml-2 h-4 w-4" />
-              </Button>
-              <Button
+                <span className="flex items-center">
+                  Ver Projetos
+                  <ArrowDown className="ml-2 h-4 w-4" />
+                </span>
+              </MagneticButton>
+              <MagneticButton
                 size="lg"
                 variant="outline"
                 onClick={() => {
                   const element = document.getElementById("contact")
                   if (element) element.scrollIntoView({ behavior: "smooth" })
                 }}
-                className="text-base border-2 hover:bg-primary/10 transition-all duration-300 hover:scale-105"
+                className="text-base border-2 hover:bg-primary/10 transition-all duration-300"
               >
-                Entrar em Contacto
-              </Button>
+                <span>Entrar em Contacto</span>
+              </MagneticButton>
             </div>
           </div>
 

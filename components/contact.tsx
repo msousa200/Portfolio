@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Github, Linkedin, Mail } from "lucide-react"
+import { ParallaxText } from "@/components/parallax-text"
 
 export function Contact() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -38,7 +39,11 @@ export function Contact() {
         <div className="max-w-4xl mx-auto space-y-12">
           {/* Section Title */}
           <div className="text-center space-y-4 animate-on-scroll opacity-0">
-            <h2 className="text-4xl md:text-5xl font-bold">Vamos Trabalhar Juntos</h2>
+            <ParallaxText speed={-0.3}>
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
+                Vamos Trabalhar Juntos
+              </h2>
+            </ParallaxText>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance">
               Estou sempre aberto a novos desafios e oportunidades. Entre em contacto para discutirmos o seu próximo
               projeto!
