@@ -1,11 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { ExternalLink } from "lucide-react"
-import Image from "next/image"
+import { ProjectCard } from "@/components/project-card"
 
 const projects = [
   {
@@ -108,55 +104,15 @@ export function Projects() {
           {/* Projects Grid */}
           <div className="space-y-16">
             {projects.map((project, index) => (
-              <Card
+              <ProjectCard
                 key={index}
-                className="overflow-hidden animate-on-scroll opacity-0 hover:shadow-xl transition-shadow"
-              >
-                <div className="grid lg:grid-cols-5 gap-0">
-                  {/* Image - takes 3 columns on large screens */}
-                  <div className="relative h-96 lg:h-[500px] lg:col-span-3 bg-muted flex items-center justify-center overflow-hidden group">
-                    <Image
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      fill
-                      className="object-contain p-4 transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-
-                  {/* Content - takes 2 columns on large screens */}
-                  <div className="p-8 lg:col-span-2 flex flex-col justify-between">
-                    <div className="space-y-4">
-                      <div>
-                        <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                        <p className="text-muted-foreground leading-relaxed">{project.description}</p>
-                      </div>
-
-                      {/* Technologies */}
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech) => (
-                          <Badge key={tech} variant="secondary">
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="mt-6 flex justify-center">
-                      <Button asChild size="lg">
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center"
-                        >
-                          Ver Projeto
-                          <ExternalLink className="ml-2 h-4 w-4" />
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </Card>
+                title={project.title}
+                description={project.description}
+                image={project.image}
+                link={project.link}
+                technologies={project.technologies}
+                index={index}
+              />
             ))}
           </div>
         </div>

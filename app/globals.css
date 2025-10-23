@@ -239,6 +239,13 @@
     border: 1px solid rgba(255, 255, 255, 0.05);
   }
 
+  /* Neon glow effect */
+  .neon-glow {
+    box-shadow: 0 0 5px theme('colors.primary.DEFAULT'),
+                0 0 20px theme('colors.primary.DEFAULT / 50%'),
+                0 0 40px theme('colors.primary.DEFAULT / 30%');
+  }
+
   /* Smooth scroll behavior */
   html {
     scroll-behavior: smooth;
@@ -247,5 +254,23 @@
   /* Prevent animations from playing on page load */
   .animate-on-scroll {
     animation: none;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.5);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary));
   }
 }
