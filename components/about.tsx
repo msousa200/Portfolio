@@ -72,36 +72,48 @@ export function About() {
 
           {/* Skills Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="p-6 text-center space-y-4 animate-on-scroll opacity-0 glass hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-default">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center mx-auto group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                <Code2 className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+            <Card className="p-6 text-center space-y-4 animate-on-scroll opacity-0 glass hover:shadow-2xl hover:shadow-primary/20 hover:scale-105 transition-all duration-500 group cursor-default relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative z-10">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center mx-auto group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                  <Code2 className="h-6 w-6 text-primary group-hover:scale-110 group-hover:rotate-12 transition-all duration-500" />
+                </div>
+                <h3 className="font-semibold group-hover:text-primary transition-colors duration-300">Programação Full-Stack</h3>
+                <p className="text-sm text-muted-foreground">Next.js, React, TypeScript, Python, Django, FastAPI</p>
               </div>
-              <h3 className="font-semibold group-hover:text-primary transition-colors duration-300">Programação Full-Stack</h3>
-              <p className="text-sm text-muted-foreground">Next.js, React, TypeScript, Python, Django, FastAPI</p>
             </Card>
 
-            <Card className="p-6 text-center space-y-4 animate-on-scroll opacity-0 glass hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-default">
-              <div className="w-12 h-12 bg-gradient-to-br from-accent/20 to-accent/10 rounded-lg flex items-center justify-center mx-auto group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                <Sparkles className="h-6 w-6 text-accent group-hover:scale-110 transition-transform duration-300" />
+            <Card className="p-6 text-center space-y-4 animate-on-scroll opacity-0 glass hover:shadow-2xl hover:shadow-accent/20 hover:scale-105 transition-all duration-500 group cursor-default relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative z-10">
+                <div className="w-12 h-12 bg-gradient-to-br from-accent/20 to-accent/10 rounded-lg flex items-center justify-center mx-auto group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                  <Sparkles className="h-6 w-6 text-accent group-hover:scale-110 group-hover:rotate-12 transition-all duration-500" />
+                </div>
+                <h3 className="font-semibold group-hover:text-accent transition-colors duration-300">Integração de IA</h3>
+                <p className="text-sm text-muted-foreground">Groq API, LLaMA 3.3, AI SDK, Modelos Generativos</p>
               </div>
-              <h3 className="font-semibold group-hover:text-accent transition-colors duration-300">Integração de IA</h3>
-              <p className="text-sm text-muted-foreground">Groq API, LLaMA 3.3, AI SDK, Modelos Generativos</p>
             </Card>
 
-            <Card className="p-6 text-center space-y-4 animate-on-scroll opacity-0 glass hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-default">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center mx-auto group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                <Rocket className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+            <Card className="p-6 text-center space-y-4 animate-on-scroll opacity-0 glass hover:shadow-2xl hover:shadow-primary/20 hover:scale-105 transition-all duration-500 group cursor-default relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative z-10">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg flex items-center justify-center mx-auto group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                  <Rocket className="h-6 w-6 text-primary group-hover:scale-110 group-hover:rotate-12 transition-all duration-500" />
+                </div>
+                <h3 className="font-semibold group-hover:text-primary transition-colors duration-300">Implementação & CI/CD</h3>
+                <p className="text-sm text-muted-foreground">Vercel, Render, GitHub Actions, Docker</p>
               </div>
-              <h3 className="font-semibold group-hover:text-primary transition-colors duration-300">Implementação & CI/CD</h3>
-              <p className="text-sm text-muted-foreground">Vercel, Render, GitHub Actions, Docker</p>
             </Card>
 
-            <Card className="p-6 text-center space-y-4 animate-on-scroll opacity-0 glass hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-default">
-              <div className="w-12 h-12 bg-gradient-to-br from-accent/20 to-accent/10 rounded-lg flex items-center justify-center mx-auto group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                <Users className="h-6 w-6 text-accent group-hover:scale-110 transition-transform duration-300" />
+            <Card className="p-6 text-center space-y-4 animate-on-scroll opacity-0 glass hover:shadow-2xl hover:shadow-accent/20 hover:scale-105 transition-all duration-500 group cursor-default relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative z-10">
+                <div className="w-12 h-12 bg-gradient-to-br from-accent/20 to-accent/10 rounded-lg flex items-center justify-center mx-auto group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                  <Users className="h-6 w-6 text-accent group-hover:scale-110 group-hover:rotate-12 transition-all duration-500" />
+                </div>
+                <h3 className="font-semibold group-hover:text-accent transition-colors duration-300">Trabalho em Equipa</h3>
+                <p className="text-sm text-muted-foreground">Comunicação eficaz, colaboração, resolução de problemas</p>
               </div>
-              <h3 className="font-semibold group-hover:text-accent transition-colors duration-300">Trabalho em Equipa</h3>
-              <p className="text-sm text-muted-foreground">Comunicação eficaz, colaboração, resolução de problemas</p>
             </Card>
           </div>
         </div>

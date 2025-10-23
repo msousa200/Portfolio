@@ -52,62 +52,68 @@ export function Contact() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {/* Contact Info */}
-            <Card className="p-8 space-y-6 animate-on-scroll opacity-0 glass hover:shadow-xl hover:scale-105 transition-all duration-300">
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Informações de Contacto</h3>
+            <Card className="p-8 space-y-6 animate-on-scroll opacity-0 glass hover:shadow-2xl hover:shadow-primary/20 hover:scale-105 transition-all duration-500 shine-effect relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Informações de Contacto</h3>
 
-              <div className="space-y-4">
-                <div className="flex items-start gap-3 group">
-                  <Mail className="h-5 w-5 text-primary mt-1 group-hover:scale-110 transition-transform duration-300" />
-                  <div>
-                    <p className="font-medium">Email</p>
-                    <p className="text-muted-foreground">
-                      msousa200@gmail.com
-                    </p>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3 group/item">
+                    <Mail className="h-5 w-5 text-primary mt-1 group-hover/item:scale-110 group-hover/item:rotate-12 transition-all duration-300" />
+                    <div>
+                      <p className="font-medium">Email</p>
+                      <p className="text-muted-foreground">
+                        msousa200@gmail.com
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </Card>
 
             {/* Social Links */}
-            <Card className="p-8 space-y-6 animate-on-scroll opacity-0 glass hover:shadow-xl hover:scale-105 transition-all duration-300">
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Redes Sociais</h3>
+            <Card className="p-8 space-y-6 animate-on-scroll opacity-0 glass hover:shadow-2xl hover:shadow-accent/20 hover:scale-105 transition-all duration-500 shine-effect relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Redes Sociais</h3>
 
-              <div className="space-y-4">
-                <Button asChild variant="outline" className="w-full justify-start h-auto py-4 bg-transparent hover:bg-primary/10 hover:scale-105 transition-all duration-300 group">
-                  <a
-                    href="https://github.com/msousa200"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3"
-                  >
-                    <Github className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
-                    <div className="text-left">
-                      <p className="font-medium">GitHub</p>
-                      <p className="text-sm text-muted-foreground">@msousa200</p>
-                    </div>
-                  </a>
-                </Button>
+                <div className="space-y-4">
+                  <Button asChild variant="outline" className="w-full justify-start h-auto py-4 bg-transparent hover:bg-primary/10 hover:scale-105 transition-all duration-300 group/btn">
+                    <a
+                      href="https://github.com/msousa200"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3"
+                    >
+                      <Github className="h-5 w-5 group-hover/btn:rotate-12 transition-transform duration-300" />
+                      <div className="text-left">
+                        <p className="font-medium">GitHub</p>
+                        <p className="text-sm text-muted-foreground">@msousa200</p>
+                      </div>
+                    </a>
+                  </Button>
 
-                <Button asChild variant="outline" className="w-full justify-start h-auto py-4 bg-transparent hover:bg-primary/10 hover:scale-105 transition-all duration-300 group">
-                  <a
-                    href="https://www.linkedin.com/in/miguel-sousa-264629134/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3"
-                  >
-                    <Linkedin className="h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
-                    <div className="text-left">
-                      <p className="font-medium">LinkedIn</p>
-                      <p className="text-sm text-muted-foreground">Miguel Sousa</p>
-                    </div>
-                  </a>
-                </Button>
-              </div>
+                  <Button asChild variant="outline" className="w-full justify-start h-auto py-4 bg-transparent hover:bg-primary/10 hover:scale-105 transition-all duration-300 group/btn">
+                    <a
+                      href="https://www.linkedin.com/in/miguel-sousa-264629134/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3"
+                    >
+                      <Linkedin className="h-5 w-5 group-hover/btn:rotate-12 transition-transform duration-300" />
+                      <div className="text-left">
+                        <p className="font-medium">LinkedIn</p>
+                        <p className="text-sm text-muted-foreground">Miguel Sousa</p>
+                      </div>
+                    </a>
+                  </Button>
+                </div>
 
-              <div className="pt-4 border-t border-border">
-                <p className="text-sm text-muted-foreground text-center">
-                  Disponível para oportunidades de freelance e tempo inteiro
-                </p>
+                <div className="pt-4 border-t border-border">
+                  <p className="text-sm text-muted-foreground text-center">
+                    Disponível para oportunidades de freelance e tempo inteiro
+                  </p>
+                </div>
               </div>
             </Card>
           </div>

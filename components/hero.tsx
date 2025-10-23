@@ -41,8 +41,9 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/10 to-background animate-gradient-shift" />
       
       {/* Geometric shapes with floating animation */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse" style={{ animation: "pulse 4s ease-in-out infinite, float 6s ease-in-out infinite" }} />
+      <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse animate-bounce-subtle" />
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animation: "pulse 4s ease-in-out infinite, float 8s ease-in-out infinite reverse", animationDelay: "1s" }} />
+      <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-primary/3 rounded-full blur-3xl animate-rotate-slow" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
@@ -93,11 +94,11 @@ export function Hero() {
               <MagneticButton 
                 size="lg" 
                 onClick={scrollToProjects} 
-                className="text-base bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="text-base bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-primary/50 shine-effect relative group"
               >
-                <span className="flex items-center">
+                <span className="flex items-center relative z-10">
                   Ver Projetos
-                  <ArrowDown className="ml-2 h-4 w-4" />
+                  <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform duration-300" />
                 </span>
               </MagneticButton>
               <MagneticButton
@@ -107,7 +108,7 @@ export function Hero() {
                   const element = document.getElementById("contact")
                   if (element) element.scrollIntoView({ behavior: "smooth" })
                 }}
-                className="text-base border-2 hover:bg-primary/10 transition-all duration-300"
+                className="text-base border-2 hover:bg-primary/10 hover:border-primary transition-all duration-300 shine-effect group"
               >
                 <span>Entrar em Contacto</span>
               </MagneticButton>
